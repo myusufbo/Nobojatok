@@ -41,8 +41,8 @@ public class MainActivity extends ActionBarActivity {
 
         headerResult = new AccountHeader()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.header)
-                .addProfiles(
+                .withHeaderBackground(R.drawable.babyheader)
+                /*.addProfiles(
                         new ProfileDrawerItem().withName("Yusuf").withEmail("yusufboss420@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile)),
                         new ProfileDrawerItem().withName("Srabon").withEmail("kazisrabon@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile2))
                 )
@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity {
                     public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
                         return false;
                     }
-                })
+                })*/
                 .build();
 
         // Handle Toolbar
@@ -86,33 +86,24 @@ public class MainActivity extends ActionBarActivity {
                                 //Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
 
                             } else if (drawerItem.getIdentifier() == 1) {
-                                fragment = new Calculator();
-                                //startActivity(new Intent(getApplicationContext(),HealthCalculator.class));
+                                //fragment = new Calculator();
+                                startActivity(new Intent(getApplicationContext(),HealthCalculator.class));
 
 
                             } else if (drawerItem.getIdentifier() == 2) {
-                               fragment = new Mother();
-                                Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
-                                //  startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
+                                startActivity(new Intent(MainActivity.this, MotherHealthInfo.class));
                             }
                             else if (drawerItem.getIdentifier() == 3) {
-                               fragment=new Child();
 
-                                Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
-                                //  startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                                startActivity(new Intent(MainActivity.this, ChildHealthInfo.class));
                             } else if (drawerItem.getIdentifier() == 4) {
-                                fragment=new Hospital();
-                                Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
-                                //  startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                                  startActivity(new Intent(MainActivity.this, Hospital.class));
                             } else if (drawerItem.getIdentifier() == 5) {
-                                fragment=new EmergencyContact();
-                                Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
-                                //  startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                                  startActivity(new Intent(MainActivity.this, EmergencyContact.class));
                             }
                             else if (drawerItem.getIdentifier() == 6) {
-                                fragment=new Vaccination();
-                                Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
-                                //  startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                                startActivity(new Intent(MainActivity.this, Vaccination.class));
                             }
                             if (fragment != null) {
                                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -124,14 +115,14 @@ public class MainActivity extends ActionBarActivity {
                     }
                 })
                 .withFireOnInitialOnClick(true)
-                .withSavedInstance(savedInstanceState)
                 .withSelectedItem(0)
                 .build();
-
+            //result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+            //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeButtonEnabled(false);
-        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
 

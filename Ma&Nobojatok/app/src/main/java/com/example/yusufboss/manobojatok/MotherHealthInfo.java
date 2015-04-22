@@ -10,40 +10,33 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 
 
-public class HealthCalculator extends ActionBarActivity {
-    Toolbar healthToolbar;
+public class MotherHealthInfo extends ActionBarActivity {
     Drawer.Result result;
     AccountHeader.Result headerResult;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_health_calculator);
-
+        setContentView(R.layout.activity_mother_health_info);
         initDrawer(savedInstanceState);
-
-
     }
 
+
     private void initDrawer(Bundle savedInstanceState) {
-        healthToolbar=(Toolbar)findViewById(R.id.healthToolbar);
-        setSupportActionBar(healthToolbar);
-        healthToolbar.setTitleTextColor(getResources().getColor(R.color.black_semi_transparent));
+
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.motherHealthToolbar);
+        setSupportActionBar(toolbar);
 
         headerResult = new AccountHeader()
-                .withActivity(HealthCalculator.this)
+                .withActivity(this)
                 .withHeaderBackground(R.drawable.babyheader)
                 /*.addProfiles(
                         new ProfileDrawerItem().withName("Yusuf").withEmail("yusufboss420@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile)),
@@ -59,10 +52,10 @@ public class HealthCalculator extends ActionBarActivity {
 
         // Handle Toolbar
         result = new Drawer()
-                .withActivity(HealthCalculator.this)
+                .withActivity(this)
                 .withHeader(R.layout.header)
                 .withAccountHeader(headerResult)
-                .withToolbar(healthToolbar)
+                .withToolbar(toolbar)
                         //.withTranslucentStatusBar(false)
                         //.withActionBarDrawerToggle(false)
                 .addDrawerItems(
@@ -84,17 +77,29 @@ public class HealthCalculator extends ActionBarActivity {
                             //toolbar.setTitle("Home");
                             Fragment fragment = null;
                             if (drawerItem.getIdentifier() == 0) {
-                                //fragment = new Info1();
-                                startActivity(new Intent(HealthCalculator.this,MainActivity.class));
+                                //fragment = new Calculator();
+                                startActivity(new Intent(MotherHealthInfo.this,MainActivity.class));
                                 //Toast.makeText(getBaseContext(),"On Drawer Created",Toast.LENGTH_LONG).show();
 
                             } else if (drawerItem.getIdentifier() == 1) {
+                                //fragment = new Calculator();
+                                startActivity(new Intent(MotherHealthInfo.this,HealthCalculator.class));
 
-                                //Toast.makeText(getBaseContext(), "On Drawer Created", Toast.LENGTH_LONG).show();
-                                //startActivity(new Intent(MainActivity.this, HealthCalculator.class));
+
                             } else if (drawerItem.getIdentifier() == 2) {
-                                Toast.makeText(getBaseContext(), "On Drawer Created", Toast.LENGTH_LONG).show();
-                                //  startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+
+                                //startActivity(new Intent(MainActivity.this, MotherHealthInfo.class));
+                            }
+                            else if (drawerItem.getIdentifier() == 3) {
+
+                                startActivity(new Intent(MotherHealthInfo.this,ChildHealthInfo.class));
+                            } else if (drawerItem.getIdentifier() == 4) {
+                                startActivity(new Intent(MotherHealthInfo.this, Hospital.class));
+                            } else if (drawerItem.getIdentifier() == 5) {
+                                startActivity(new Intent(MotherHealthInfo.this, EmergencyContact.class));
+                            }
+                            else if (drawerItem.getIdentifier() == 6) {
+                                startActivity(new Intent(MotherHealthInfo.this, Vaccination.class));
                             }
                             if (fragment != null) {
                                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -106,27 +111,21 @@ public class HealthCalculator extends ActionBarActivity {
                     }
                 })
                 .withFireOnInitialOnClick(true)
-
-                .withSelectedItem(1)
+                .withSelectedItem(2)
                 .build();
-
+        //result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(false);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeButtonEnabled(false);
         result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
-    /*private void init() {
-
-        //healthToolbar=(Toolbar)findViewById(R.id.healthToolbar);
-        //healthToolbar.setTitle("Health Calculator");
-    }
-*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_health_calculator, menu);
+        getMenuInflater().inflate(R.menu.menu_mother_health_info, menu);
         return true;
     }
 

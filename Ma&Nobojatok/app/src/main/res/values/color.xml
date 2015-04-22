@@ -15,7 +15,7 @@
     <color name="colorDivider">#b6b6b6</color>
     <color name="green">#9AFE2E</color>
     <color name="yellow">#F4FA58</color>
-    <color name="red">#FF0000</color>
+    <color name="red">#80FF0000</color>
     <color name="greenDark">#04B404</color>
 
     <!-- FAB-->
@@ -61,7 +61,7 @@
 
     <!-- OVERWRITE THESE COLORS FOR A DARK THEME -->
     <!-- MaterialDrawer DEFAULT DARK colors -->
-    <color name="material_drawer_dark_window_background">#303030</color>
+    <color name="material_drawer_dark_window_background">#80303030</color>
     <color name="material_drawer_dark_background">#80303030</color>
     <!-- MaterialDrawer DEFAULT DARK text / items colors -->
     <color name="material_drawer_dark_icons">#000</color>

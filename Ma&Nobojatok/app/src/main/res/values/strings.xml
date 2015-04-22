@@ -29,5 +29,10 @@
     <string name="drawer_item_Emergency_contact">Emergency Contact</string>
     <string name="drawer_item_vaccenation">Vaccenation</string>
     <string name="title_activity_health_calculator">HealthCalculator</string>
+    <string name="title_activity_mother_health_info">MotherHealthInfo</string>
+    <string name="title_activity_child_health_info">ChildHealthInfo</string>
+    <string name="title_activity_hospital">Hospital</string>
+    <string name="title_activity_emergency_contact">EmergencyContact</string>
+    <string name="title_activity_vaccination">Vaccination</string>
 
 </resources>
