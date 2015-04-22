@@ -11,5 +11,13 @@
         android:elevation="10dp"
 
         />
+    <fragment
+        android:layout_below="@+id/hospitalToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map1"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
 
 </RelativeLayout>

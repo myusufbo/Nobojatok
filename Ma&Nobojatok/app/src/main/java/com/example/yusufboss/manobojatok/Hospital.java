@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
@@ -22,11 +24,28 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
 public class Hospital extends ActionBarActivity {
     Drawer.Result result;
     AccountHeader.Result headerResult;
+
+    //Google Map
+    private GoogleMap googleMap;
+    private double latitude;
+    private double longitude;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital);
         initDrawer(savedInstanceState);
+
+        try{
+            initiliazeMap();
+        }
+        catch (Exception e){
+
+        }
+    }
+
+    private void initiliazeMap() {
+
     }
 
 
