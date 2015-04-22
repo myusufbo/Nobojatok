@@ -98,9 +98,9 @@ public class Vaccination extends ActionBarActivity {
                             } else if (drawerItem.getIdentifier() == 5) {
                                 startActivity(new Intent(Vaccination.this, EmergencyContact.class));
                             }
-                            else if (drawerItem.getIdentifier() == 6) {
+                            //else if (drawerItem.getIdentifier() == 6) {
                                 //startActivity(new Intent(MainActivity.this, Vaccination.class));
-                            }
+                            //}
                             if (fragment != null) {
                                 FragmentManager fragmentManager = getSupportFragmentManager();
                                 fragmentManager.beginTransaction()

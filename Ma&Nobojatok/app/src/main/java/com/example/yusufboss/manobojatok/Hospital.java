@@ -93,9 +93,9 @@ public class Hospital extends ActionBarActivity {
                             else if (drawerItem.getIdentifier() == 3) {
 
                                 startActivity(new Intent(Hospital.this, ChildHealthInfo.class));
-                            } else if (drawerItem.getIdentifier() == 4) {
+                            } /*else if (drawerItem.getIdentifier() == 4) {
                                 //startActivity(new Intent(Hospital.this, Hospital.class));
-                            } else if (drawerItem.getIdentifier() == 5) {
+                            } */else if (drawerItem.getIdentifier() == 5) {
                                 startActivity(new Intent(Hospital.this, EmergencyContact.class));
                             }
                             else if (drawerItem.getIdentifier() == 6) {
